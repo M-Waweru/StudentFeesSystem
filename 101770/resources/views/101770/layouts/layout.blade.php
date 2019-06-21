@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
     </div>
 
 </body>
-<script src={{ asset('js/jquery.js') }}></script>
-<script src={{ asset('js/bootstrap.min.js') }}></script>
+<script src='js/jquery.js'></script>
+<script src='js/bootstrap.min.js'></script>
 
 </html>
