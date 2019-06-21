@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    public function students_fees()
+    public function studentsfees()
     {
         return $this->hasMany(Fees::class);
     }

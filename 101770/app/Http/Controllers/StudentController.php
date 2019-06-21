@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use App\Fees;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,6 @@ class StudentController extends Controller
      */
     public function index()
     {
-
         return view("101770.views.student");
     }
 
@@ -73,6 +73,17 @@ class StudentController extends Controller
         ];
     }
 
+    public function showAll(){
+        $feesdetails = Fees::all();
+        $totalfees = 0;
+
+        foreach ($feesdetails as $fees) {
+            $totalfees+=$fees->amount;
+        }
+
+        return view('101770.views.studentsfees', compact('feesdetails', 'totalfees'));
+    }
+
     /**
      * Display the specified resource.
      *
@@ -80,14 +91,23 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function showAll(){
-        $studentsdetails = 
-    }
-
-
-    public function show(Student $student)
+    public function show(Request $request)
     {
-        //
+        $studentno = $request->input('student_no');
+
+        if ($studentno==""){
+            $this->showAll();
+        }
+        
+        $feesdetails = Fees::where('student_no', '=', $studentno)->get();
+
+        $totalfees = 0;
+
+        foreach ($feesdetails as $fees) {
+            $totalfees+=$fees->amount;
+        }
+
+        return view('101770.views.studentsfees', compact('feesdetails', 'totalfees'));
     }
 
     /**

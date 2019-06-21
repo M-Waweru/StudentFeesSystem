@@ -27,7 +27,7 @@
                     <a class="nav-link" href={{ url('fees') }}>Fees form</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href={{ url('fees') }}>Fees form</a>
+                    <a class="nav-link" href={{ url('studentsdetails') }}>Summary</a>
                 </li>
             </ul>
         </div>

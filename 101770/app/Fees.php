@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fees extends Model
 {
-    public function fee_student()
+    public function students()
     {
-        return $this->belongsTo(Student::class, 'student_no', 'id');
+        return $this->belongsTo(Student::class, 'student_no');
     }
 
     protected $dates = [

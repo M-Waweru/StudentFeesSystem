@@ -23,5 +23,7 @@ Route::get('/', function () {
 // ]);
 
 Route::resource('students', 'StudentController');
+Route::get('studentsdetails', 'StudentController@showAll');
+Route::get('search', 'StudentController@show');
 
 Route::resource('fees', 'FeesController');
