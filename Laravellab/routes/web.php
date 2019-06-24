@@ -1,4 +1,6 @@
 <?php
+use App\Http\Controllers\CarController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +16,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/car', 'CarController@allcars');
+Route::get('/car/{id}', 'CarController@particularcar');
+Route::post('/car', 'CarController@newcar');
+Route::get('/addcar', 'CarController@addcar');
+
+Route::get('/review/{id}', 'ReviewsController@getCarReviews');
+Route::get('/review/car/{id}', 'ReviewsController@getCar');
+Route::post('/review', 'ReviewsController@storeReview');
+Route::get('/addreview', 'ReviewsController@addReview');
+
